@@ -1,0 +1,22 @@
+<include file="Public/mobile_headParent"/>
+<head>
+<title>家长须知</title>
+</head>	
+<link href="{:ADDON_PUBLIC_PATH}/css.css?v={:SITE_VERSION}" rel="stylesheet" type="text/css">
+<img src="__ROOT__/Public/Home/images/detai.jpg"/>
+<body>
+    	<div class="lead_box">
+        	<h6>家长须知</h6>
+		<br/>
+	        <volist name="infolist" id="vo">
+        	        <b><font color="red" size="4">{$vo.title}<br/></font>
+               		<font color="#6F00D2" size="3"><br/>{$vo.content}</font></b>
+	                <neq name="vo.extra" value="">
+        	                <font color="#4DFFFF" size="2"><b><br/><br/>{$vo['extra']}<br/></b></font>
+	                </nep>
+		        <br/>
+	        </volist>
+	</div>
+   <div> <p class="copyright">德泰·曲江第一幼儿园</p></div>
+</body>
+</html>
