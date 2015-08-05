@@ -1,0 +1,97 @@
+<extend name="Base/common" />
+<block name="body">
+  <div class="span9 page_message">
+    <section id="contents">
+      <include file="Addons/_nav" />
+	  	  <p class="normal_tips" style="margin:5px 20px"><b class="fa fa-info-circle"></b> 需开通模板消息功能！<br />
+		  其他插件调用方式，再需要发送的地方加上<br />
+		  sendtempmsg($openid, $template_id, $url, $data, $topcolor='#FF0000')<br />
+		  $openid：接收者的openid，$template_id：模板ID，$url：用户点击后的跳转地址（可以为空），$data：模板数据包，$topcolor：顶部颜色</p>
+      <div class="tab-content"> 
+        <!-- 表单 -->
+        <form id="form" action="{:U('test')}" method="post" class="form-horizontal form-center">
+          <!-- 基础文档模型 -->
+
+            <div id="tab1" class="tab-pane in tab1">
+
+                  <div class="form-item cf" rel="openid">
+                    <label class="item-label">OPENID：<span class="check-tips"></span></label>
+                    <div class="controls">
+                          <label class="textarea input-large">
+                            <input name="openid" type="text" class="text input-large">
+                          </label>
+                    </div>
+                  </div>
+                  <div class="form-item cf" rel="template_id">
+                    <label class="item-label">模板ID：<span class="check-tips"></span></label>
+                    <div class="controls">
+                          <label class="textarea input-large">
+                            <input name="template_id" type="text" class="text input-large">
+                          </label>
+                    </div>
+                  </div>
+                  <div class="form-item cf" rel="url">
+                    <label class="item-label">跳转地址：<span class="check-tips">以http://开头，可不填</span></label>
+                    <div class="controls">
+                          <label class="textarea input-large">
+                            <input name="url" type="text" class="text input-large">
+                          </label>
+                    </div>
+                  </div>
+                  <div class="form-item cf" rel="data">
+                    <label class="item-label">JOSN数据包：<span class="check-tips"></span></label>
+                    <div class="controls">
+                          <label class="textarea input-large">
+                            <textarea name="data" style="width:500px"></textarea>
+                          </label>
+                    </div>
+                  </div>
+
+
+
+          <div class="form-item cf">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">发 送</button>
+             </div>
+        </form>
+        </div>
+
+      </div>
+    </section>
+  </div>
+</block>
+<block name="script">
+  <link href="__STATIC__/datetimepicker/css/datetimepicker.css?v={:SITE_VERSION}" rel="stylesheet" type="text/css">
+  <php>if(C('COLOR_STYLE')=='blue_color') echo '
+    <link href="__STATIC__/datetimepicker/css/datetimepicker_blue.css?v={:SITE_VERSION}" rel="stylesheet" type="text/css">
+    ';</php>
+  <link href="__STATIC__/datetimepicker/css/dropdown.css?v={:SITE_VERSION}" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script> 
+  <script type="text/javascript" src="__STATIC__/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js?v={:SITE_VERSION}" charset="UTF-8"></script> 
+  <script type="text/javascript">
+$('#submit').click(function(){
+    $('#form').submit();
+});
+
+$(function(){
+    $('.time').datetimepicker({
+        format: 'yyyy-mm-dd hh:ii',
+        language:"zh-CN",
+        minView:2,
+        autoclose:true
+    });
+    $('.date').datetimepicker({
+        format: 'yyyy-mm-dd',
+        language:"zh-CN",
+        minView:2,
+        autoclose:true
+    });	
+    showTab();
+	$('#form select').change(change_event(this));
+	$('#form input[name="radio"]').change(change_event(this));
+	$('#form input[name="checkbox"]').change(change_event(this));
+});
+function change_event(obj){
+	
+}
+</script> 
+</block>
