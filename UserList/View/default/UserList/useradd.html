@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>用户注册</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maxinum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<style type="text/css">
+	body{padding-top:50px;}
+	* a{text-decoration: none !important;}
+	.navbar{background: #fff;color:#08a5e0 !important;font-size:20px;font-weight:700;line-height: 50px;}
+	.navbar-brand{color:#fff}
+	 img{width:320px !important; }
+	</style>
+</head>
+<body>
+<!-- header begin -->
+<nav class="navbar navbar-fixed-top text-center">
+
+ <img src="__ROOT__/Public/Home/images/detai.jpg"/> 
+<!--  <span class="glyphicon glyphicon-user">&nbsp;家长绑定</span> -->
+
+</nav>
+
+<!-- fabu begin -->
+<div class="well">
+<form method="post">
+
+<div class="form-group">
+<label for="name">学生姓名</label>
+<input class="form-control" type="text" id="c_name" name="c_name" placeholder="请输入您的宝宝的姓名" /></div>
+
+<div class="form-group">
+<label for="classid">班级编号</label>
+<input class="form-control" type="text" id="classid" name="classid" placeholder="请输入您的宝宝的班级编号" /></div>
+
+<div class="form-group">
+<label for="pri_key">密钥</label>
+<input class="form-control" type="text" id="pri_key" name="pri_key" placeholder="请输入您收到的短信密钥" /></div>
+
+<div class="form-group">
+<label for="p_name">真实姓名</label>
+<input class="form-control" type="text" id="p_name" name="p_name" placeholder="请输入您的真实姓名" /></div>
+
+<div class="form-group">
+<label for="phone">手机号码</label>
+<input class="form-control" type="text" id="phone" name="phone" placeholder="请输入您的手机号码" /></div>
+
+<div class="form-group">
+<label for="relation">选择关系&nbsp;&nbsp;</label>
+<select name="relation">
+<option value="M-m" selected="selected">父子</option>
+<option value="M-w">父女</option>
+<option value="W-m">母子</option>
+<option value="W-w">母女</option>
+<option value="O-o">其他</option></select>
+<div class="text-right">
+<br><br/>
+<button class="btn btn-block btn-large btn-primary" type="submit" id="submit-btn"><font size="4">确&nbsp;认&nbsp;绑&nbsp;定</font></button>
+<br></br>
+</div></form>
+</div>
+
+<!--  <img src="__ROOT__/Public/Home/images/detai.jpg"/> -->
+
+ 	<script type="text/javascript">
+		$('#submit-btn').click(function(){
+			if($('#name').val()==''){
+				alert('请输入宝宝姓名');
+				return false;
+			}		
+			if($('#pri_key').val()==''){
+				alert('请输入短信密钥');
+				return false;
+			}
+ 			if($('#p_name').val()==''){
+                                alert('请输入您的姓名');
+                                return false;
+			}
+			if($('#phone').val()==''){
+                                alert('请输入手机号码');
+                                return false;
+			}
+ 			if($('#classid').val()==''){
+                                alert('请输入您宝宝的班级号');
+                                return false; 
+			}
+			if($('#relation').val()==''){
+                                alert('请选择绑定关系');
+                                return false;
+
+			}
+			})
+	</script>
+
+</body>
+</html>
