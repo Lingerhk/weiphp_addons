@@ -1,0 +1,17 @@
+<include file="Public/mobile_head2"/>
+<title>营养数据<title>
+<link href="{:ADDON_PUBLIC_PATH}/css.css?v={:SITE_VERSION}" rel="stylesheet" type="text/css">
+<body>
+	<div id="container" class="container">
+        <div class="lead_over">
+       	    <p>{$info}</p> 
+            <a href="javascript:;" onClick="closepage();" class="share_btn">返回微信</a>
+                   
+    	<p class="copyright">{$system_copy_right}</p>
+<script type="text/javascript">
+function closepage(){
+	WeixinJSBridge.call('closeWindow');
+}
+</script>
+</body>
+</html>
