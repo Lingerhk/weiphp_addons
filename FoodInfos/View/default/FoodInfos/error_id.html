@@ -1,0 +1,16 @@
+<extend name="Base/common" />
+<block name="body">
+  <div class="span9 page_message">
+    <section id="contents"> 
+      <include file="Addons/_nav" /> 
+      <div class="table-bar">
+	<h3><font color="#FF0000">存在无法识别的学生ID：</font></h3>
+	<p><font size="4" color="blue">{$errid}</font></p>
+	<br>
+	<p><font size="3">请确保学生ID(即:考勤编号)正确无误！</font></p>
+      </div>
+      </if>
+      <div class="page"> {$_page|default=''} </div>
+    </section>
+  </div>
+</block>
