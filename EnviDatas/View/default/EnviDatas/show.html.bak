@@ -1,0 +1,29 @@
+<include file="Public/mobile_head2"/>
+<head>
+<title>环境信息</title>
+</head>	
+<link href="{:ADDON_PUBLIC_PATH}/css.css?v={:SITE_VERSION}" rel="stylesheet" type="text/css">
+<img src="__ROOT__/Public/Home/images/detai.jpg"/>
+<body>
+	<div id="container" class="container">
+    	<div class="lead_box">
+        	<h6>园内的环境信息</h6>
+		<br/>
+		<volist name="infolist" id="vo">
+	       	 <tr>
+        		<font color="red" size="4"><b>{$vo.title}</b>&nbsp;&nbsp;
+		        <neq name="vo.value" value="">
+        		      {$vo['value']}
+		        </neq></font>
+		        <font color="#6F00D2" size="3"><br/><br/><b>{$vo.content}</b></h2>
+	        	<neq name="vo.extra" value="">
+        		        <font color="#0072E3" size="2"><b><br/><br/>{$vo['extra']}</b></font>
+		        </neq>
+	        </tr>
+        	<br/><br/>
+        	</volist>
+		
+	</div>
+    <p class="copyright">德泰·曲江第一幼儿园</p>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<include file="Public/mobile_head2"/>
+<title>环境数据</title>
+<link href="{:ADDON_PUBLIC_PATH}/css.css?v={:SITE_VERSION}" rel="stylesheet" type="text/css">
+<body>
+
+	<nav class="navbar navbar-fixed-top text-center">
+ 	    <img src="__ROOT__/Public/Home/images/detai.jpg"/>
+	</nav>
+
+	<div id="container" class="container">
+	<br></br><br>
+    	<div class="lead_box">
+        	<h6>园内环境信息</h6>
+            <div class="lead_content">
+		<volist name="infolist" id="vo">
+		    <font color="#537EB6" style="font-size:16px"><b>{$vo.title}</b>&nbsp;</font>
+		    <font color="#537EB6" style="font-size:16px"><b>{$vo.value}</b></font><br>
+		    <font color="#222" style="font-size:15px">{$vo.content}</font><br>
+		    <font color="#666">日期 {$vo.ctime|substr=5,5}</font>
+		    <br>
+		</volist>
+	    </div>
+	<!--<font size="3" color="#555">{$infos}</font>-->
+	</div>
+    <p class="copyright">德泰教育 © 2015</p>
+</body>
+</html>
